@@ -5,6 +5,18 @@ st.title('App 1')
 result = os.popen('pip list').read()
 st.code(result, language=None)
 
+st.title('Reading file from repo')
+file_path = 'text_file.txt'
+try:
+    with open(file_path, 'r') as file:
+        # Read the lines of the file
+        file_lines = file.readlines()
+except FileNotFoundError:
+    print(f"File '{file_path}' not found.")
+except Exception as e:
+    print(f"An error occurred: {e}")
+st.write(file_lines)
+
 from pathlib import Path
 import sys
 import sklearn 
