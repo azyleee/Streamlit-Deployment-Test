@@ -1,4 +1,7 @@
 import streamlit as st
+
+st.title('App 1')
+
 from pathlib import Path
 import sys
 import sklearn 
