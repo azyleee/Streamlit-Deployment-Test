@@ -1,6 +1,9 @@
 import streamlit as st
+import os
 
 st.title('App 1')
+result = os.popen('pip list').read()
+st.code(result, language=None)
 
 from pathlib import Path
 import sys
