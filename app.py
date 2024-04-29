@@ -19,12 +19,18 @@ st.write(file_lines)
 
 from pathlib import Path
 import sys
-import sklearn 
+from sklearn.preprocessing import MinMaxScaler
 import scipy 
+import numpy as np
 from IPython.display import clear_output
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 
 from module import function
 
-y = function(12.0)
+x = np.random.uniform(size=(10,3))
+y = function(x)
 st.title(f'{y}')
+
+scaler = MinMaxScaler()
+y_scaled = scaler.fit_transform(y)
+st.code(y_scaled)
